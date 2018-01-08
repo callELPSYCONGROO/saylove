@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>LOVE</title>
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('static/js/Digital-7Mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="static/css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <!--<script type="text/javascript" src="static/js/garden.js"></script>-->
+    <script type="text/javascript" src="static/js/functions.js"></script>
+</head>
+<body>
+<div>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="space"></span><span class="comments">// From 2017—08-27 to now</span><br/>
+                Boy name = <span class="keyword">Mr</span> MA<br/>
+
+                <span class="comments">// Precious things are very few in this world.</span><br/>
+                <span class="comments">// That is the reason there is just one you.</span><br/>
+                Girl name = <span class="keyword">Mrs</span> YE<br/>
+                <br/>
+                I want to say:<br/>
+                <span class="placeholder"></span><span class="placeholder"></span>I love you <span class="keyword">forever</span><br/>
+            </div>
+
+            <div id="xin" style="height: 280px;">
+                <iframe id="ifif" frameborder="0" scrolling="no" src="3d-love.html" width="100%" height="280px"></iframe>
+            </div>
+
+            <div id="loveHeart">
+                <!--<canvas id="garden"></canvas>-->
+                <div id="words">
+                    <div id="messages">
+                        小姐姐，这是我们在一起的时光<span id="lastLetter">。</span>
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        和你一直走下去。<br/>
+                        <div class="signature"><span id="uname">- 馬先生</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var clientWidth = document.body.clientWidth;
+        var clientHeight = document.body.clientHeight;
+        $("#code").height(clientHeight * 0.3 + "px");
+        $("#loveHeart").height(clientHeight * 0.3 + "px");
+        // var $loveHeart = $("#loveHeart");
+        // var $gardenXY = $("#garden");
+        // var offsetX = $gardenXY.width() / 2;
+        // var offsetY = $gardenXY.height() / 2 + 150;
+        var together = new Date();
+        together.setFullYear(2017, 8, 24);
+        together.setHours(19);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        // setTimeout(function () {
+        //     startHeartAnimation();
+        // }, 5000);/
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+        // // adjustCodePosition();
+        $("#code").typewriter();
+
+        setTimeout(function () {
+            $("#ifif").show();
+            setTimeout(function () {
+                 $("#words").show();
+            }, 2100);
+        }, 1);//16800
+
+        var offset = document.getElementById("lastLetter").offsetLeft;
+        var right = clientWidth - offset;
+        var unameWidth = $("#uname").width();
+        var marginRight = right > unameWidth ? right- unameWidth : right;
+        $(".signature").css("margin-right", marginRight);
+    </script>
+
+    <div style="text-align:center;clear:both">
+    </div>
+</div>
+</body>
+</html>

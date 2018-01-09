@@ -37,15 +37,13 @@
     <div id="mainDiv">
         <div id="content">
             <div id="code">
-                <span class="space"></span><span class="comments">// From 2017—08-27 to now</span><br/>
-                Boy name = <span class="keyword">Mr</span> MA<br/>
-
-                <span class="comments">// Precious things are very few in this world.</span><br/>
-                <span class="comments">// That is the reason there is just one you.</span><br/>
-                Girl name = <span class="keyword">Mrs</span> YE<br/>
-                <br/>
-                I want to say:<br/>
-                <span class="placeholder"></span><span class="placeholder"></span>I love you <span class="keyword">forever</span><br/>
+                <span class="height-length"><span class="space"></span><span class="comments">// From 2017—08-27 to now</span><br/></span>
+                <span class="height-length">Boy name = <span class="keyword">Mr</span> MA<br/></span>
+                <span class="height-length"><span class="comments">// Precious things are very few in this world.</span><br/></span>
+                <span class="height-length"><span class="comments">// That is the reason there is just one you.</span><br/></span>
+                <span class="height-length">Girl name = <span class="keyword">Mrs</span> YE<br/></span>
+                <span class="height-length"><span class="comments">// I want to say:</span><br/></span>
+                <span class="height-length">I love you <span class="keyword">forever</span><br/></span>
             </div>
 
             <div id="subpage" style="height: 280px;">
@@ -120,8 +118,13 @@
     <script type="text/javascript">
         var clientWidth = document.body.clientWidth;
         var clientHeight = document.body.clientHeight;
-        $("#code").height(clientHeight * 0.3);
         $("#loveHeart").height(clientHeight * 0.3);
+        var codeHeight = 0;
+        $(".height-length").each(function () {
+            codeHeight += this.offsetHeight;
+        });
+        $("#code").height(codeHeight * 1.3);
+        // $("#code").height(clientHeight * 0.3);
         // var $loveHeart = $("#loveHeart");
         // var $gardenXY = $("#garden");
         // var offsetX = $gardenXY.width() / 2;66

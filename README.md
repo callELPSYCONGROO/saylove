@@ -19,6 +19,7 @@ subpage 中为各种css3动画，可以放到`<div id="subpage">`中配置一下
     * _static/js/index.js_ **主页脚本**
     * _static/js/star.js_ **star脚本**
     * _static/images/bg.jpg_ **背景图片**
+    * _static/images/love.ico_ **背景图片**
 ****
 
 后续待开发...

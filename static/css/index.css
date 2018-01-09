@@ -1,4 +1,9 @@
-﻿body {
+﻿@font-face {
+    font-family: digit;
+    src: url('../js/Digital-7Mono.ttf') format("truetype");
+}
+
+body {
     margin: 0;
     padding: 0;
     background: url("../images/bg.jpg") no-repeat;
@@ -17,32 +22,33 @@
 
 #loveHeart {
     font-size: 0.27rem;
+    margin-top: 10px;
 }
 
-#xin {
-    animation-name: stretch;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 0.5s;/*16.5*/
-    animation-iteration-count: 1;
-    animation-direction: normal;
-}
+/*#subpage {*/
+    /*animation-name: stretch;*/
+    /*animation-duration: 1.5s;*/
+    /*animation-timing-function: ease-out;*/
+    /*animation-delay: 0.5s;!*16.5*!*/
+    /*animation-iteration-count: 1;*/
+    /*animation-direction: normal;*/
+/*}*/
 
-#ifif {
-    display: none;
-}
+/*#ifif {*/
+    /*display: none;*/
+/*}*/
 
-@keyframes stretch {
-    0% {
-        transform: scale(.3);
-        border-radius: 100%;
-    }
-    50% {
-    }
-    100% {
-        transform: scale(1.5);
-    }
-}
+/*@keyframes stretch {*/
+    /*0% {*/
+        /*transform: scale(.3);*/
+        /*border-radius: 100%;*/
+    /*}*/
+    /*50% {*/
+    /*}*/
+    /*100% {*/
+        /*transform: scale(1.5);*/
+    /*}*/
+/*}*/
 
 /*#garden {*/
     /*width: 100%;*/
@@ -60,8 +66,8 @@
     font-family: "sans-serif";
     width: 100%;
     /*font-size: 24px;*/
-    color: #666;
-    display: none;
+    color: #CCCCFF;
+    /*display: none;*/
 }
 
 /*#messages {*/
@@ -71,7 +77,7 @@
 #elapseClock .digit {
     font-family: "digit";
     /*font-size: 36px*/
-    color: #f22613;
+    color: #FF5511;
 }
 
 #loveu {
@@ -84,15 +90,15 @@
 }
 
 #loveu .signature {
-    float: right;
+    /*float: right;*/
     margin-top: 10px;
     font-size: 20px;
     font-style: italic;
 }
 
-#clickSound {
-    display: none;
-}
+/*#clickSound {*/
+    /*display: none;*/
+/*}*/
 
 #code {
     /*width: auto;*/

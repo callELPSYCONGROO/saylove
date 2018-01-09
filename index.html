@@ -3,7 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>LOVE</title>
+    <link href="static/css/index.css" type="text/css" rel="stylesheet">
+    <link href="static/css/star.css" type="text/css" rel="stylesheet">
+    <link href="static/css/animations.css" type="text/css" rel="stylesheet">
     <script type="text/javascript">
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -23,16 +25,11 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     </script>
-    <style type="text/css">
-        @font-face {
-            font-family: digit;
-            src: url('static/js/Digital-7Mono.ttf') format("truetype");
-        }
-    </style>
-    <link href="static/css/default.css" type="text/css" rel="stylesheet">
+    <title>LOVE</title>
     <script type="text/javascript" src="static/js/jquery.js"></script>
     <!--<script type="text/javascript" src="static/js/garden.js"></script>-->
-    <script type="text/javascript" src="static/js/functions.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/star.js"></script>
 </head>
 <body>
 <div>
@@ -50,20 +47,69 @@
                 <span class="placeholder"></span><span class="placeholder"></span>I love you <span class="keyword">forever</span><br/>
             </div>
 
-            <div id="xin" style="height: 280px;">
-                <iframe id="ifif" frameborder="0" scrolling="no" src="3d-love.html" width="100%" height="280px"></iframe>
+            <div id="subpage" style="height: 280px;">
+                <!--<iframe id="ifif" frameborder="0" scrolling="no" src="subpage/3d-love.html" width="100%" height="280px"></iframe>-->
+                <!--<iframe id="ifif" frameborder="0" scrolling="no" src="subpage/star.html" width="100%" height="280px"></iframe>-->
+
+                <div class="container">
+                    <!-- stars -->
+                    <div class="star star-1"></div>
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <!-- clouds -->
+                    <div class="cloud-group-1">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <div class="cloud-group-2">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <div class="cloud-group-3">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <!-- orbits -->
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="orbit orbit-4"></div>
+                    <div class="orbit orbit-5"></div>
+                    <div class="orbit orbit-6"></div>
+                    <!-- main planet -->
+                    <div class="ring-before"></div>
+                    <div class="ring-bigger-before"></div>
+                    <div class="planet"></div>
+                    <div class="ring-after"></div>
+                    <div class="ring-bigger-after"></div>
+                    <!-- sub planet -->
+                    <div class="sub-planet"></div>
+                </div>
+
             </div>
 
             <div id="loveHeart">
                 <!--<canvas id="garden"></canvas>-->
                 <div id="words">
                     <div id="messages">
-                        小姐姐，这是我们在一起的时光<span id="lastLetter">。</span>
+                        <span class="is-animate3 style3"><span>小</span><span>姐</span><span>姐</span></span>，这是我们在一起的时光<span class="is-animate4 style4">.</span> .</span> .</span></span>
                         <div id="elapseClock"></div>
                     </div>
                     <div id="loveu">
-                        和你一直走下去。<br/>
-                        <div class="signature"><span id="uname">- 馬先生</span></div>
+                        <span id="up">和你一直走下去<span id="lastLetter">。</span></span><br/>
+                        <div class="signature"><span id="uname" class="is-animate3 style3">- <span>馬</span><span>先</span><span>生</span></span></div>
                     </div>
                 </div>
             </div>
@@ -73,11 +119,11 @@
     <script type="text/javascript">
         var clientWidth = document.body.clientWidth;
         var clientHeight = document.body.clientHeight;
-        $("#code").height(clientHeight * 0.3 + "px");
-        $("#loveHeart").height(clientHeight * 0.3 + "px");
+        $("#code").height(clientHeight * 0.3);
+        $("#loveHeart").height(clientHeight * 0.3);
         // var $loveHeart = $("#loveHeart");
         // var $gardenXY = $("#garden");
-        // var offsetX = $gardenXY.width() / 2;
+        // var offsetX = $gardenXY.width() / 2;66
         // var offsetY = $gardenXY.height() / 2 + 150;
         var together = new Date();
         together.setFullYear(2017, 8, 24);
@@ -97,18 +143,27 @@
         // // adjustCodePosition();
         $("#code").typewriter();
 
-        setTimeout(function () {
-            $("#ifif").show();
-            setTimeout(function () {
-                 $("#words").show();
-            }, 2100);
-        }, 1);//16800
+        // setTimeout(function () {
+        //     $("#ifif").show();
+        //     setTimeout(function () {
+        //          $("#words").show();
+        //     }, 2100);
+        // }, 1);//16800
 
-        var offset = document.getElementById("lastLetter").offsetLeft;
-        var right = clientWidth - offset;
-        var unameWidth = $("#uname").width();
-        var marginRight = right > unameWidth ? right- unameWidth : right;
-        $(".signature").css("margin-right", marginRight);
+        var offset = clientWidth - document.getElementById("lastLetter").offsetLeft;
+        var right = clientWidth / 2 - offset;
+        var unameWidth = $("#uname").width() / 2;
+        var normalRight = right + unameWidth;
+        var upRight = $("#up").width() / 2;
+        var marginRight = 0;
+        if (normalRight < clientWidth / 2) {
+            marginRight = normalRight;
+        } else if (unameWidth < clientWidth / 2) {
+            marginRight = unameWidth;
+        } else if (upRight < clientWidth / 2) {
+            marginRight = upRight;
+        }
+        $(".signature").css("margin-left", marginRight);
     </script>
 
     <div style="text-align:center;clear:both">

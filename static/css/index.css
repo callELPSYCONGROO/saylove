@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url("../images/bg.jpg") no-repeat;
+    background: url("../img/bg.jpg") no-repeat;
     /*font-size: 12px;*/
     overflow: auto;
     background-size:cover;
